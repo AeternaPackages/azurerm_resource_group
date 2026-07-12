@@ -1,4 +1,9 @@
 # --- azurerm_resource_group ---
+output "resource_groups_id" {
+  description = "Map of id values across all resource_groups, keyed the same as var.resource_groups"
+  value       = module.resource_groups.resource_groups_id
+}
+
 output "resource_groups_location" {
   description = "Map of location values across all resource_groups, keyed the same as var.resource_groups"
   value       = module.resource_groups.resource_groups_location
@@ -20,6 +25,11 @@ output "resource_groups_tags" {
 }
 
 # --- azurerm_resource_deployment_script_azure_cli ---
+output "resource_deployment_script_azure_clis_id" {
+  description = "Map of id values across all resource_deployment_script_azure_clis, keyed the same as var.resource_deployment_script_azure_clis"
+  value       = module.resource_deployment_script_azure_clis.resource_deployment_script_azure_clis_id
+}
+
 output "resource_deployment_script_azure_clis_cleanup_preference" {
   description = "Map of cleanup_preference values across all resource_deployment_script_azure_clis, keyed the same as var.resource_deployment_script_azure_clis"
   value       = module.resource_deployment_script_azure_clis.resource_deployment_script_azure_clis_cleanup_preference
@@ -113,6 +123,11 @@ output "resource_deployment_script_azure_clis_version" {
 }
 
 # --- azurerm_resource_deployment_script_azure_power_shell ---
+output "resource_deployment_script_azure_power_shells_id" {
+  description = "Map of id values across all resource_deployment_script_azure_power_shells, keyed the same as var.resource_deployment_script_azure_power_shells"
+  value       = module.resource_deployment_script_azure_power_shells.resource_deployment_script_azure_power_shells_id
+}
+
 output "resource_deployment_script_azure_power_shells_cleanup_preference" {
   description = "Map of cleanup_preference values across all resource_deployment_script_azure_power_shells, keyed the same as var.resource_deployment_script_azure_power_shells"
   value       = module.resource_deployment_script_azure_power_shells.resource_deployment_script_azure_power_shells_cleanup_preference
@@ -206,6 +221,11 @@ output "resource_deployment_script_azure_power_shells_version" {
 }
 
 # --- azurerm_resource_group_cost_management_export ---
+output "resource_group_cost_management_exports_id" {
+  description = "Map of id values across all resource_group_cost_management_exports, keyed the same as var.resource_group_cost_management_exports"
+  value       = module.resource_group_cost_management_exports.resource_group_cost_management_exports_id
+}
+
 output "resource_group_cost_management_exports_active" {
   description = "Map of active values across all resource_group_cost_management_exports, keyed the same as var.resource_group_cost_management_exports"
   value       = module.resource_group_cost_management_exports.resource_group_cost_management_exports_active
@@ -252,6 +272,11 @@ output "resource_group_cost_management_exports_resource_group_id" {
 }
 
 # --- azurerm_resource_group_cost_management_view ---
+output "resource_group_cost_management_views_id" {
+  description = "Map of id values across all resource_group_cost_management_views, keyed the same as var.resource_group_cost_management_views"
+  value       = module.resource_group_cost_management_views.resource_group_cost_management_views_id
+}
+
 output "resource_group_cost_management_views_accumulated" {
   description = "Map of accumulated values across all resource_group_cost_management_views, keyed the same as var.resource_group_cost_management_views"
   value       = module.resource_group_cost_management_views.resource_group_cost_management_views_accumulated
@@ -303,6 +328,11 @@ output "resource_group_cost_management_views_timeframe" {
 }
 
 # --- azurerm_resource_group_policy_assignment ---
+output "resource_group_policy_assignments_id" {
+  description = "Map of id values across all resource_group_policy_assignments, keyed the same as var.resource_group_policy_assignments"
+  value       = module.resource_group_policy_assignments.resource_group_policy_assignments_id
+}
+
 output "resource_group_policy_assignments_description" {
   description = "Map of description values across all resource_group_policy_assignments, keyed the same as var.resource_group_policy_assignments"
   value       = module.resource_group_policy_assignments.resource_group_policy_assignments_description
@@ -374,6 +404,11 @@ output "resource_group_policy_assignments_resource_selectors" {
 }
 
 # --- azurerm_resource_group_policy_exemption ---
+output "resource_group_policy_exemptions_id" {
+  description = "Map of id values across all resource_group_policy_exemptions, keyed the same as var.resource_group_policy_exemptions"
+  value       = module.resource_group_policy_exemptions.resource_group_policy_exemptions_id
+}
+
 output "resource_group_policy_exemptions_description" {
   description = "Map of description values across all resource_group_policy_exemptions, keyed the same as var.resource_group_policy_exemptions"
   value       = module.resource_group_policy_exemptions.resource_group_policy_exemptions_description
@@ -420,6 +455,11 @@ output "resource_group_policy_exemptions_resource_group_id" {
 }
 
 # --- azurerm_resource_group_policy_remediation ---
+output "resource_group_policy_remediations_id" {
+  description = "Map of id values across all resource_group_policy_remediations, keyed the same as var.resource_group_policy_remediations"
+  value       = module.resource_group_policy_remediations.resource_group_policy_remediations_id
+}
+
 output "resource_group_policy_remediations_failure_percentage" {
   description = "Map of failure_percentage values across all resource_group_policy_remediations, keyed the same as var.resource_group_policy_remediations"
   value       = module.resource_group_policy_remediations.resource_group_policy_remediations_failure_percentage
@@ -466,6 +506,11 @@ output "resource_group_policy_remediations_resource_group_id" {
 }
 
 # --- azurerm_resource_group_template_deployment ---
+output "resource_group_template_deployments_id" {
+  description = "Map of id values across all resource_group_template_deployments, keyed the same as var.resource_group_template_deployments"
+  value       = module.resource_group_template_deployments.resource_group_template_deployments_id
+}
+
 output "resource_group_template_deployments_debug_level" {
   description = "Map of debug_level values across all resource_group_template_deployments, keyed the same as var.resource_group_template_deployments"
   value       = module.resource_group_template_deployments.resource_group_template_deployments_debug_level
@@ -512,6 +557,11 @@ output "resource_group_template_deployments_template_spec_version_id" {
 }
 
 # --- azurerm_resource_management_private_link ---
+output "resource_management_private_links_id" {
+  description = "Map of id values across all resource_management_private_links, keyed the same as var.resource_management_private_links"
+  value       = module.resource_management_private_links.resource_management_private_links_id
+}
+
 output "resource_management_private_links_location" {
   description = "Map of location values across all resource_management_private_links, keyed the same as var.resource_management_private_links"
   value       = module.resource_management_private_links.resource_management_private_links_location
@@ -528,6 +578,11 @@ output "resource_management_private_links_resource_group_name" {
 }
 
 # --- azurerm_resource_management_private_link_association ---
+output "resource_management_private_link_associations_id" {
+  description = "Map of id values across all resource_management_private_link_associations, keyed the same as var.resource_management_private_link_associations"
+  value       = module.resource_management_private_link_associations.resource_management_private_link_associations_id
+}
+
 output "resource_management_private_link_associations_management_group_id" {
   description = "Map of management_group_id values across all resource_management_private_link_associations, keyed the same as var.resource_management_private_link_associations"
   value       = module.resource_management_private_link_associations.resource_management_private_link_associations_management_group_id
