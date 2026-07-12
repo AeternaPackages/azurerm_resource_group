@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.resource_groups : {
       for k2, v2 in coalesce(v1.resource_deployment_script_azure_clis, {}) :
       "${k1}/${k2}" => merge(v2, {
-        resource_group_name = module.resource_groups.resource_groups["${k1}"].name
+        resource_group_name = module.resource_groups.resource_groups_name["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.resource_groups : {
       for k2, v2 in coalesce(v1.resource_deployment_script_azure_power_shells, {}) :
       "${k1}/${k2}" => merge(v2, {
-        resource_group_name = module.resource_groups.resource_groups["${k1}"].name
+        resource_group_name = module.resource_groups.resource_groups_name["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.resource_groups : {
       for k2, v2 in coalesce(v1.resource_group_cost_management_exports, {}) :
       "${k1}/${k2}" => merge(v2, {
-        resource_group_id = module.resource_groups.resource_groups["${k1}"].id
+        resource_group_id = module.resource_groups.resource_groups_id["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.resource_groups : {
       for k2, v2 in coalesce(v1.resource_group_cost_management_views, {}) :
       "${k1}/${k2}" => merge(v2, {
-        resource_group_id = module.resource_groups.resource_groups["${k1}"].id
+        resource_group_id = module.resource_groups.resource_groups_id["${k1}"]
       })
     }
   ]...)
@@ -41,7 +41,7 @@ locals {
     for k1, v1 in var.resource_groups : {
       for k2, v2 in coalesce(v1.resource_group_policy_assignments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        resource_group_id = module.resource_groups.resource_groups["${k1}"].id
+        resource_group_id = module.resource_groups.resource_groups_id["${k1}"]
       })
     }
   ]...)
@@ -50,7 +50,7 @@ locals {
     for k1, v1 in var.resource_groups : {
       for k2, v2 in coalesce(v1.resource_group_policy_exemptions, {}) :
       "${k1}/${k2}" => merge(v2, {
-        resource_group_id = module.resource_groups.resource_groups["${k1}"].id
+        resource_group_id = module.resource_groups.resource_groups_id["${k1}"]
       })
     }
   ]...)
@@ -59,7 +59,7 @@ locals {
     for k1, v1 in var.resource_groups : {
       for k2, v2 in coalesce(v1.resource_group_policy_remediations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        resource_group_id = module.resource_groups.resource_groups["${k1}"].id
+        resource_group_id = module.resource_groups.resource_groups_id["${k1}"]
       })
     }
   ]...)
@@ -68,7 +68,7 @@ locals {
     for k1, v1 in var.resource_groups : {
       for k2, v2 in coalesce(v1.resource_group_template_deployments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        resource_group_name = module.resource_groups.resource_groups["${k1}"].name
+        resource_group_name = module.resource_groups.resource_groups_name["${k1}"]
       })
     }
   ]...)
@@ -77,7 +77,7 @@ locals {
     for k1, v1 in var.resource_groups : {
       for k2, v2 in coalesce(v1.resource_management_private_links, {}) :
       "${k1}/${k2}" => merge(v2, {
-        resource_group_name = module.resource_groups.resource_groups["${k1}"].name
+        resource_group_name = module.resource_groups.resource_groups_name["${k1}"]
       })
     }
   ]...)
@@ -87,7 +87,7 @@ locals {
       for k2, v2 in coalesce(v1.resource_management_private_links, {}) : {
         for k3, v3 in coalesce(v2.resource_management_private_link_associations, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          resource_management_private_link_id = module.resource_management_private_links.resource_management_private_links["${k1}/${k2}"].id
+          resource_management_private_link_id = module.resource_management_private_links.resource_management_private_links_id["${k1}/${k2}"]
         })
       }
     ]...)
