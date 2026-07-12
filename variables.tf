@@ -149,11 +149,11 @@ EOT
       container = optional(object({
         container_group_name = optional(string)
       }))
-      environment_variable = optional(object({
+      environment_variable = optional(list(object({
         name         = string
         secure_value = optional(string)
         value        = optional(string)
-      }))
+      })))
       identity = optional(object({
         identity_ids = set(string)
         type         = string
@@ -179,11 +179,11 @@ EOT
       container = optional(object({
         container_group_name = optional(string)
       }))
-      environment_variable = optional(object({
+      environment_variable = optional(list(object({
         name         = string
         secure_value = optional(string)
         value        = optional(string)
-      }))
+      })))
       identity = optional(object({
         identity_ids = set(string)
         type         = string
@@ -217,27 +217,27 @@ EOT
       report_type  = string
       timeframe    = string
       dataset = object({
-        aggregation = object({
+        aggregation = list(object({
           column_name = string
           name        = string
-        })
+        }))
         granularity = string
-        grouping = optional(object({
+        grouping = optional(list(object({
           name = string
           type = string
-        }))
-        sorting = optional(object({
+        })))
+        sorting = optional(list(object({
           direction = string
           name      = string
-        }))
+        })))
       })
-      kpi = optional(object({
+      kpi = optional(list(object({
         type = string
-      }))
-      pivot = optional(object({
+      })))
+      pivot = optional(list(object({
         name = string
         type = string
-      }))
+      })))
     })))
     resource_group_policy_assignments = optional(map(object({
       name                 = string
@@ -253,26 +253,26 @@ EOT
         identity_ids = optional(set(string))
         type         = string
       }))
-      non_compliance_message = optional(object({
+      non_compliance_message = optional(list(object({
         content                        = string
         policy_definition_reference_id = optional(string)
-      }))
-      overrides = optional(object({
-        selectors = optional(object({
+      })))
+      overrides = optional(list(object({
+        selectors = optional(list(object({
           in     = optional(list(string))
           kind   = optional(string) # Default: "policyDefinitionReferenceId"
           not_in = optional(list(string))
-        }))
+        })))
         value = string
-      }))
-      resource_selectors = optional(object({
+      })))
+      resource_selectors = optional(list(object({
         name = optional(string)
-        selectors = object({
+        selectors = list(object({
           in     = optional(list(string))
           kind   = string
           not_in = optional(list(string))
-        })
-      }))
+        }))
+      })))
     })))
     resource_group_policy_exemptions = optional(map(object({
       exemption_category              = string
