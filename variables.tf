@@ -138,14 +138,14 @@ EOT
       name                   = string
       retention_interval     = string
       version                = string
-      cleanup_preference     = optional(string) # Default: "Always"
+      cleanup_preference     = optional(string)
       command_line           = optional(string)
       force_update_tag       = optional(string)
       primary_script_uri     = optional(string)
       script_content         = optional(string)
       supporting_script_uris = optional(list(string))
       tags                   = optional(map(string))
-      timeout                = optional(string) # Default: "P1D"
+      timeout                = optional(string)
       container = optional(object({
         container_group_name = optional(string)
       }))
@@ -168,14 +168,14 @@ EOT
       name                   = string
       retention_interval     = string
       version                = string
-      cleanup_preference     = optional(string) # Default: "Always"
+      cleanup_preference     = optional(string)
       command_line           = optional(string)
       force_update_tag       = optional(string)
       primary_script_uri     = optional(string)
       script_content         = optional(string)
       supporting_script_uris = optional(list(string))
       tags                   = optional(map(string))
-      timeout                = optional(string) # Default: "P1D"
+      timeout                = optional(string)
       container = optional(object({
         container_group_name = optional(string)
       }))
@@ -198,8 +198,8 @@ EOT
       recurrence_period_end_date   = string
       recurrence_period_start_date = string
       recurrence_type              = string
-      active                       = optional(bool)   # Default: true
-      file_format                  = optional(string) # Default: "Csv"
+      active                       = optional(bool)
+      file_format                  = optional(string)
       export_data_options = object({
         time_frame = string
         type       = string
@@ -244,7 +244,7 @@ EOT
       policy_definition_id = string
       description          = optional(string)
       display_name         = optional(string)
-      enforce              = optional(bool) # Default: true
+      enforce              = optional(bool)
       location             = optional(string)
       metadata             = optional(string)
       not_scopes           = optional(list(string))
@@ -260,7 +260,7 @@ EOT
       overrides = optional(list(object({
         selectors = optional(list(object({
           in     = optional(list(string))
-          kind   = optional(string) # Default: "policyDefinitionReferenceId"
+          kind   = optional(string)
           not_in = optional(list(string))
         })))
         value = string
@@ -292,7 +292,7 @@ EOT
       parallel_deployments           = optional(number)
       policy_definition_reference_id = optional(string)
       resource_count                 = optional(number)
-      resource_discovery_mode        = optional(string) # Default: "ExistingNonCompliant"
+      resource_discovery_mode        = optional(string)
     })))
     resource_group_template_deployments = optional(map(object({
       deployment_mode          = string
